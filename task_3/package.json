@@ -16,7 +16,7 @@
     "react-router-dom": "^6.22.3",
     "zustand": "^4.5.2",
     "react-dropzone": "^14.2.3",
-    "react-pdf": "^7.7.1", 
+    "react-pdf": "^10.0.1", 
     "@react-pdf/renderer": "^3.4.0",
     "clsx": "^2.1.0"
   },
