@@ -72,21 +72,21 @@ export const LeaderboardItem: React.FC<LeaderboardItemProps> = ({
   const opacity = isDragging ? 0.4 : 1;
   drag(drop(ref));
 
-  // Helper function to get user name from user_id (mock implementation)
-  const getUserName = (userId: number) => {
+  // Helper function to get user name (shuffled since all user_id is 1)
+  const getUserName = (videoId: number) => {
     const userNames = ['ninaoris', 'deniscrypto', 'meta_word98', 'kingdom43world', 'gi39874230pariaf'];
-    return userNames[userId - 1] || `user${userId}`;
+    return userNames[videoId % userNames.length];
   };
 
   const renderColumn = (columnType: string) => {
     switch (columnType) {
       case 'rank':
-        return <div className="text-center text-base text-custom-values font-medium">{rank}</div>;
+        return <div className="text-center text-base text-custom-values font-medium">{rank.toString().padStart(2, '0')}</div>;
       case 'title':
         return (
           <div className="flex items-center gap-4">
             <img src={video.photo} alt="thumbnail" className="w-16 h-12 rounded-lg object-cover" />
-            <span className="text-sm text-white leading-[1.4] font-normal">{video.title}</span>
+            <span className="text-sm leading-[1.4] font-normal">{video.title}</span>
           </div>
         );
       case 'author':
@@ -95,13 +95,13 @@ export const LeaderboardItem: React.FC<LeaderboardItemProps> = ({
             <div className="w-5 h-5 bg-custom-author rounded-full flex items-center justify-center text-xs">
               <BiUser className='text-black' size={12} />
             </div>
-            <span className="text-custom-author font-normal">{getUserName(video.user_id)}</span>
+            <span className="text-custom-author font-normal">{getUserName(video.id)}</span>
           </div>
         );
       case 'points':
         return (
           <div className="flex items-center justify-end gap-2 text-base">
-            <span className="text-white font-medium">{video.likes}</span>
+            <span className="font-medium">{video.likes}</span>
             <FaArrowUp className="text-custom-green text-sm"></FaArrowUp>
           </div>
         );

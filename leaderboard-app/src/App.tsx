@@ -89,11 +89,22 @@ function App() {
         <main className="px-10 pb-10 max-w-[1200px] mx-auto">
           <div className="mb-7 flex justify-between items-end">
             <div className="flex flex-col">
-              <p className="text-[48px] !font-extralight text-white leading-tight">Today's leaderboard</p>
+              <p
+                className="text-[48px]"
+                style={{
+                  fontWeight: "100",
+                }}
+              >
+                Today's leaderboard
+              </p>
             </div>
-            <div className="flex items-center gap-3 text-sm bg-[#1D1D1D] px-6 py-4 rounded-2xl">
-              <span className="text-custom-titles font-normal">30 May 2022</span>
-              <span className="bg-custom-green text-[#707D5D] px-2 py-1 rounded text-xs">SUBMISSIONS OPEN</span>
+            <div className="flex items-center gap-3 text-sm bg-[#1D1D1D] px-6 py-3 rounded-2xl">
+              <span className="text-custom-titles font-normal">
+                30 May 2022
+              </span>
+              <span className="bg-custom-green text-[#707D5D] px-2 py-1 rounded-2xl text-xs">
+                SUBMISSIONS OPEN
+              </span>
               <span className="text-custom-titles font-normal">11:34</span>
             </div>
           </div>
@@ -161,7 +172,7 @@ function App() {
             </div>
             <div className="flex items-center gap-4">
               <button
-                className="bg-gray-700 text-white border-none px-4 py-2 rounded text-sm cursor-pointer transition-colors hover:bg-custom-green hover:text-black disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-gray-700border-none px-4 py-2 rounded text-sm cursor-pointer transition-colors hover:bg-custom-green hover:text-black disabled:opacity-50 disabled:cursor-not-allowed"
                 onClick={handlePrevPage}
                 disabled={currentPage <= 1 || loading}
               >
@@ -171,7 +182,7 @@ function App() {
                 Page {currentPage} of {totalPages}
               </span>
               <button
-                className="bg-gray-700 text-white border-none px-4 py-2 rounded text-sm cursor-pointer transition-colors hover:bg-custom-green hover:text-black disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-gray-700 border-none px-4 py-2 rounded text-sm cursor-pointer transition-colors hover:bg-custom-green hover:text-black disabled:opacity-50 disabled:cursor-not-allowed"
                 onClick={handleNextPage}
                 disabled={currentPage >= totalPages || loading}
               >

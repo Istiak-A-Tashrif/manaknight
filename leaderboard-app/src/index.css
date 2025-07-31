@@ -1,9 +1,8 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 @theme {
   --color-custom-bg: #111111;
-  --color-custom-green: #A5FF3A;
+  --color-custom-green: #a5ff3a;
   --color-custom-author: #434d24;
   --color-custom-text: #2f2f2f;
   --color-custom-values: #373737;
@@ -13,11 +12,11 @@
 }
 
 :root {
-  /* font-family: "Inter", sans-serif; */
   line-height: 1.5;
   font-weight: 400;
   color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
+
   background-color: #111111;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
